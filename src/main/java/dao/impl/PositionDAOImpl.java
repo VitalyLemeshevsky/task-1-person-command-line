@@ -5,7 +5,7 @@ import dao.PositionDAO;
 public class PositionDAOImpl implements PositionDAO {
 
     @Override
-    public void addPositionDAO() {
+    public void addPositionDAO(String positionName) {
 
     }
 
