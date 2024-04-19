@@ -6,10 +6,10 @@ import models.Position;
 import java.util.Scanner;
 
 public class App {
-    private static Scanner console = new Scanner(System.in);
-    private Position position;
+    private final static Scanner console = new Scanner(System.in);
+    private static PositionDAO positionDAO;
     public static void main(String[] args) {
-        PositionDAO positionDAO = new PositionDAOImpl();
-       new AddNewPositionCommand(positionDAO, console);
+        positionDAO = new PositionDAOImpl();
+       new AddNewPositionCommand(positionDAO, console).execute();
     }
 }
