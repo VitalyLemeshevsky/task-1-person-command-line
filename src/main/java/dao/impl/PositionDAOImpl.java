@@ -16,7 +16,18 @@ public class PositionDAOImpl implements PositionDAO {
         position.setPositionId(Storage.getLastIdPositionHashMap());
         position.setPositionName(positionName);
 
-//         Storage.positionHashMap.put(Storage.getLastIdPositionHashMap() + 1, (PositionDAO) position);
+        Storage.positionHashMap.put(Storage.getLastIdPositionHashMap(), position);
+
+    }
+
+    @Override
+    public boolean isPositionName(String positionName) {
+        return Storage.positionHashMap.values().stream().filter(position -> position.getPositionName().equals(positionName)).findFirst().isEmpty();
+    }
+
+    @Override
+    public HashMap<Integer, Position> getAllPositions() {
+        return Storage.positionHashMap;
     }
 
     @Override
@@ -25,7 +36,7 @@ public class PositionDAOImpl implements PositionDAO {
     }
 
     @Override
-    public HashMap<Integer, Position> getAllPositions() {
-        return Storage.positionHashMap;
+    public PositionDAO getPositionByName(String positionName) {
+        return null;
     }
 }

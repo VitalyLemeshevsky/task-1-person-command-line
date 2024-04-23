@@ -13,6 +13,9 @@ public class Storage {
     public static HashMap<Integer, Position> positionHashMap;
     private static HashMap<Integer, Person> personHashMap;
 
+    static {
+        positionHashMap = new HashMap<>();
+    }
     public static int getLastIdPositionHashMap() {
         return lastIdPositionHashMap;
     }
