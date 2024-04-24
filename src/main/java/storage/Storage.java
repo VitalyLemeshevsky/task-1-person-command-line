@@ -1,26 +1,21 @@
 package storage;
 
-import dao.PositionDAO;
-import models.Person;
 import models.Position;
+import storage.impl.StorageImpl;
 
 import java.util.HashMap;
+import java.util.Map;
 
-public class Storage {
-    static int lastIdPositionHashMap = 0;
+public interface Storage {
     static int lastPersonHashMap = 0;
+    static Map positionHashMap = null;
 
-    public static HashMap<Integer, Position> positionHashMap;
-    private static HashMap<Integer, Person> personHashMap;
-
-    static {
-        positionHashMap = new HashMap<>();
-    }
-    public static int getLastIdPositionHashMap() {
-        return lastIdPositionHashMap;
+    public static Map getPositionHashMap() {
+        return positionHashMap;
     }
 
-    public static void setLastIdPositionHashMap(int lastIdPositionHashMap) {
-        Storage.lastIdPositionHashMap = lastIdPositionHashMap;
+    public static void setPositionHashMap(Map positionHashMap) {
+
     }
+
 }

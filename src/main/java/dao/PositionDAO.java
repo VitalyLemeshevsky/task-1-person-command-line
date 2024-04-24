@@ -9,7 +9,12 @@ public interface PositionDAO {
     public void addPositionDAO(String positionName);
     public void changePositionDAO();
     public HashMap<Integer, Position> getAllPositions();
-    public PositionDAO getPositionByName(String positionName);
-    boolean isPositionName(String positionName);
+    public Position getPositionByName(String positionName);
+    public Position getPositionById(String positionId);
+    public boolean isPositionName(String positionName);
+    public boolean isPositionKey(int positionName);
+    public void deleateStudentByName(String positionName);
+
+
 
 }

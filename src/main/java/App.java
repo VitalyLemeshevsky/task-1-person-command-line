@@ -1,6 +1,8 @@
 import dao.PositionDAO;
 import dao.impl.PositionDAOImpl;
 import menuCommand.AddNewPositionCommand;
+import menuCommand.ChangePositionByKey;
+import menuCommand.DeletePositionByName;
 import menuCommand.DisplayListAllPositions;
 import models.Position;
 
@@ -16,6 +18,10 @@ public class App {
         positionDAO = new PositionDAOImpl();
         new AddNewPositionCommand(new PositionDAOImpl(), console).execute();
         new AddNewPositionCommand(new PositionDAOImpl(), console).execute();
+        new DisplayListAllPositions(positionDAO).execute();
+        new DeletePositionByName(new PositionDAOImpl(), console).execute();
+        new DisplayListAllPositions(positionDAO).execute();
+        new ChangePositionByKey(new PositionDAOImpl(), console).execute();
         new DisplayListAllPositions(positionDAO).execute();
     }
 }

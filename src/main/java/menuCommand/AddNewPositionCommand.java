@@ -1,10 +1,7 @@
 package menuCommand;
 
 import dao.PositionDAO;
-import models.Position;
-import storage.Storage;
 
-import java.util.Collection;
 import java.util.Scanner;
 
 public class AddNewPositionCommand implements MenuCommand {
@@ -25,10 +22,7 @@ public class AddNewPositionCommand implements MenuCommand {
 
             positionName = console.nextLine();
 
-            Collection<Position> positions = Storage.positionHashMap.values();
-            String finalPositionName = positionName;
-
-            if (!positionName.equals("") && !positionDAO.isPositionName(positionName)) {
+            if (!positionName.equals("") && positionDAO.isPositionName(positionName)) {
                 System.out.println("Внимание! Должность \"" + positionName + "\" уже существует");
                 positionName = "";
             }
