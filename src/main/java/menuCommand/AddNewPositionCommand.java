@@ -19,14 +19,12 @@ public class AddNewPositionCommand implements MenuCommand {
 
         while (positionName == "") {
             System.out.println("Введите наименование должности:");
-
             positionName = console.nextLine();
 
             if (!positionName.equals("") && positionDAO.isPositionName(positionName)) {
                 System.out.println("Внимание! Должность \"" + positionName + "\" уже существует");
                 positionName = "";
             }
-
         }
 
         positionDAO.addPositionDAO(positionName);

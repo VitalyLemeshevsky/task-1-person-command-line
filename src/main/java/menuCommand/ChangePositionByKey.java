@@ -1,10 +1,7 @@
 package menuCommand;
 
 import dao.PositionDAO;
-import models.Position;
-import storage.impl.StorageImpl;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class ChangePositionByKey implements MenuCommand {
@@ -18,25 +15,26 @@ public class ChangePositionByKey implements MenuCommand {
 
     @Override
     public void execute() {
-        String idName = null;
-        HashMap<Integer, Position> positionHashMap;
-        Position position;
+        String positionId = null;
+        String positionName = "";
 
-        while (Integer.getInteger(idName) == null) {
+        while (positionId == null) {
             System.out.println("Введите id должности, которую хотите измененить:");
-            idName = console.nextLine();
+            positionId = console.nextLine();
 
-            System.out.println("idName = " + idName);
-            System.out.println("Integer.getInteger(idName) = " + Integer.getInteger(idName));
+            if (positionId.matches("[-+]?\\d+") && positionDAO.isPositionKey(Integer.parseInt(positionId))) {
+                while (positionName.equals("")) {
+                    System.out.println("Введите другое название должности с id = " + positionId);
 
-            if (Integer.getInteger(idName) != null && positionDAO.isPositionKey(Integer.parseInt(idName))) {
-                System.out.println("Введите другое название должности с id = " + idName);
-
-                positionHashMap = StorageImpl.getPositionHashMap();
-                position = positionHashMap.get(Integer.parseInt(idName));
-                position.setPositionName(idName);
-                positionHashMap.put(Integer.parseInt(idName), position);
-
+                    positionName = console.nextLine();
+                    if (!positionName.equals("") && positionDAO.isPositionName(positionName)) {
+                        System.out.println("Внимание! Должность \"" + positionName + "\" уже существует");
+                        positionName = "";
+                    }
+                }
+                positionDAO.changePositionDAO(Integer.parseInt(positionId), positionName);
+            } else {
+                positionId = null;
             }
         }
     }

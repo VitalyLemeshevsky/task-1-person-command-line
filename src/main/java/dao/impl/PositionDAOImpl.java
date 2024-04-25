@@ -19,7 +19,6 @@ public class PositionDAOImpl implements PositionDAO {
         position.setPositionId(StorageImpl.getLastIdPositionHashMap());
         position.setPositionName(positionName);
 
-//        Storage.positionHashMap.put(Storage.getLastIdPositionHashMap(), position);
         HashMap<Integer, Position> positionHashMap = StorageImpl.getPositionHashMap();
         positionHashMap.put(StorageImpl.getLastIdPositionHashMap(), position);
         StorageImpl.setPositionHashMap(positionHashMap);
@@ -28,7 +27,6 @@ public class PositionDAOImpl implements PositionDAO {
 
     @Override
     public boolean isPositionName(String positionName) {
-//        return !Storage.positionHashMap.values().stream().filter(position -> position.getPositionName().equals(positionName)).findFirst().isEmpty();
         return !StorageImpl.getPositionHashMap().values().stream().filter(position -> position.getPositionName().equals(positionName)).findFirst().isEmpty();
     }
 
@@ -37,28 +35,31 @@ public class PositionDAOImpl implements PositionDAO {
         return StorageImpl.getPositionHashMap().containsKey(positionName);
     }
 
-
     @Override
-    public void deleateStudentByName(String positionName) {
-        Position position = getPositionByName(positionName);
-
-
+    public void deleatePositionByName(String positionName) {
+        HashMap<Integer, Position> positionHashMap = StorageImpl.getPositionHashMap();
+        positionHashMap.remove(getPositionByName(positionName).getPositionId());
+        StorageImpl.setPositionHashMap(positionHashMap);
     }
 
     @Override
     public HashMap<Integer, Position> getAllPositions() {
-//        return Storage.positionHashMap;
         return StorageImpl.getPositionHashMap();
     }
 
     @Override
-    public void changePositionDAO() {
-
+    public void changePositionDAO(int positionId, String positionName) {
+        System.out.println("positionId = " + positionId);
+        HashMap<Integer, Position> positionHashMap;
+        Position position;
+        positionHashMap = StorageImpl.getPositionHashMap();
+        position = positionHashMap.get(positionId);
+        position.setPositionName(positionName);
+        positionHashMap.put(positionId, position);
     }
 
     @Override
     public Position getPositionByName(String positionName) {
-//        return Storage.positionHashMap.values().stream().filter(position -> position.getPositionName().equals(positionName)).findFirst().get();
         return StorageImpl.getPositionHashMap().values().stream().filter(position -> position.getPositionName().equals(positionName)).findFirst().get();
     }
 
@@ -66,6 +67,5 @@ public class PositionDAOImpl implements PositionDAO {
     public Position getPositionById(String positionId) {
         return StorageImpl.getPositionHashMap().get(positionId);
     }
-
 
 }
