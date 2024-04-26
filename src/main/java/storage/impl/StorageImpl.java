@@ -32,4 +32,11 @@ public class StorageImpl {
         StorageImpl.positionHashMap = positionHashMap;
     }
 
+    public static HashMap<Integer, Person> getPersonHashMap() {
+        return personHashMap;
+    }
+
+    public static void setPersonHashMap(HashMap<Integer, Person> personHashMap) {
+        StorageImpl.personHashMap = personHashMap;
+    }
 }

@@ -10,7 +10,7 @@ public interface PositionDAO {
     public void changePositionDAO(int positionId, String positionName);
     public HashMap<Integer, Position> getAllPositions();
     public Position getPositionByName(String positionName);
-    public Position getPositionById(String positionId);
+    public Position getPositionById(Integer positionId);
     public boolean isPositionName(String positionName);
     public boolean isPositionKey(int positionName);
     public void deleatePositionByName(String positionName);

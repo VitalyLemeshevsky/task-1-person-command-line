@@ -22,7 +22,6 @@ public class PositionDAOImpl implements PositionDAO {
         HashMap<Integer, Position> positionHashMap = StorageImpl.getPositionHashMap();
         positionHashMap.put(StorageImpl.getLastIdPositionHashMap(), position);
         StorageImpl.setPositionHashMap(positionHashMap);
-
     }
 
     @Override
@@ -49,12 +48,13 @@ public class PositionDAOImpl implements PositionDAO {
 
     @Override
     public void changePositionDAO(int positionId, String positionName) {
-        System.out.println("positionId = " + positionId);
         HashMap<Integer, Position> positionHashMap;
         Position position;
+
         positionHashMap = StorageImpl.getPositionHashMap();
-        position = positionHashMap.get(positionId);
+        position = getPositionById(positionId);
         position.setPositionName(positionName);
+
         positionHashMap.put(positionId, position);
     }
 
@@ -64,7 +64,7 @@ public class PositionDAOImpl implements PositionDAO {
     }
 
     @Override
-    public Position getPositionById(String positionId) {
+    public Position getPositionById(Integer positionId) {
         return StorageImpl.getPositionHashMap().get(positionId);
     }
 

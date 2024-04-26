@@ -2,7 +2,6 @@ package menuCommand;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import dao.PositionDAO;
 import models.Position;
 
@@ -17,7 +16,6 @@ public class DisplayListAllPositions implements MenuCommand {
 
     @Override
     public void execute() {
-//        ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         ObjectMapper mapper = new ObjectMapper();
         String json = "";
         if (positionDAO.getAllPositions().isEmpty()) {
@@ -33,8 +31,6 @@ public class DisplayListAllPositions implements MenuCommand {
                     throw new RuntimeException(e);
                 }
             }
-
-         //   String json = mapper.writeValueAsString(yourObject);
         }
     }
 }
