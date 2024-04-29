@@ -18,6 +18,7 @@ public class PersonDAOImpl implements PersonDAO {
         person.setPosition(position);
         person.setSignOfDismissal(signOfDismissal);
 
+        //
         HashMap<Integer, Person> personHashMap = StorageImpl.getPersonHashMap();
 
     }
