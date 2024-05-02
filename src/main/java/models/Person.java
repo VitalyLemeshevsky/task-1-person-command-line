@@ -16,10 +16,10 @@ public class Person {
      */
     int personId;
     private Date dateOfCreation;
-    private Date dateOfInfidelity;
+    private Date dateOfModification;
     private String firstName;
     private String lastName;
-    private String surname;
+    private String patronymic;
     private Position position;
     private boolean signOfDismissal;
 
@@ -44,12 +44,12 @@ public class Person {
         return this;
     }
 
-    public Date getDateOfInfidelity() {
-        return dateOfInfidelity;
+    public Date dateOfModification() {
+        return dateOfModification;
     }
 
-    public Person setDateOfInfidelity(Date dateOfInfidelity) {
-        this.dateOfInfidelity = dateOfInfidelity;
+    public Person setDateOfModification(Date dateOfModification) {
+        this.dateOfModification = dateOfModification;
         return this;
     }
 
@@ -71,12 +71,12 @@ public class Person {
         return this;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getPatronymic() {
+        return patronymic;
     }
 
-    public Person setSurname(String surname) {
-        this.surname = surname;
+    public Person setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
         return this;
     }
 
@@ -103,12 +103,12 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return personId == person.personId && signOfDismissal == person.signOfDismissal && Objects.equals(dateOfCreation, person.dateOfCreation) && Objects.equals(dateOfInfidelity, person.dateOfInfidelity) && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(surname, person.surname) && Objects.equals(position, person.position);
+        return personId == person.personId && signOfDismissal == person.signOfDismissal && Objects.equals(dateOfCreation, person.dateOfCreation) && Objects.equals(dateOfModification, person.dateOfModification) && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(patronymic, person.patronymic) && Objects.equals(position, person.position);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(personId, dateOfCreation, dateOfInfidelity, firstName, lastName, surname, position, signOfDismissal);
+        return Objects.hash(personId, dateOfCreation, dateOfModification, firstName, lastName, patronymic, position, signOfDismissal);
     }
 }
 

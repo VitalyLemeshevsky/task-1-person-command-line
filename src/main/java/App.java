@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.PositionDAO;
 import dao.impl.PositionDAOImpl;
 import utilitys.CreatingMap;
@@ -9,8 +10,10 @@ import java.util.Scanner;
 public class App {
     private final static Scanner console = new Scanner(System.in);
     //^([1-9]|1[0-2])$
-    private final static String regex = "^([1-5])$";
+    private final static String regex = "^([1-6])$";
+    private static ObjectMapper mapper = new ObjectMapper();
     private static PositionDAO positionDAO = new PositionDAOImpl();
+
 
     public static void main(String[] args) {
         CreatingMap creatingMap = new CreatingMap();
@@ -39,7 +42,7 @@ public class App {
 
         while (choiseAction) {
             System.out.println("Хотите продолжить работой с программой? (если Да-то введите y, если Нет- " +
-                    "то введите любой другое значение");
+                    "то введите любой другое значение)");
             if (console.nextLine().equals("y")) {
                 consoleMenu.print();
                 while (choiceMade.equals("")) {

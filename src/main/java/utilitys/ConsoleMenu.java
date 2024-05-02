@@ -9,5 +9,6 @@ public class ConsoleMenu {
         System.out.println("\t3. Удалить должность по имени");
         System.out.println("\t4. Вывести одну конкретную должность");
         System.out.println("\t5. Вывести список должностей");
+        System.out.println("\t6. Создать нового сотрудника");
     }
 }

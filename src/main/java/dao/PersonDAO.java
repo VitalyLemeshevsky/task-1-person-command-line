@@ -6,7 +6,9 @@ import models.Position;
 import java.util.Date;
 
 public interface PersonDAO {
-public void addPerson(String firstName, String lastName, String surname, Position position, boolean signOfDismissal);
-public void changePerson();
-public Person getPersonById(int id);
+    public void addPerson(String lastName, String firstName, String patronymic, Position position, boolean signOfDismissal, Date dateOfCreation, Date dateOfModification);
+
+    public void changePerson();
+
+    public Person getPersonById(int id);
 }

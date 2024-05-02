@@ -5,22 +5,24 @@ import models.Person;
 import models.Position;
 import storage.impl.StorageImpl;
 
+import java.util.Date;
 import java.util.HashMap;
 
 public class PersonDAOImpl implements PersonDAO {
     @Override
-    public void addPerson(String firstName, String lastName, String surname, Position position, boolean signOfDismissal) {
+    public void addPerson(String lastName, String firstName, String patronymic, Position position, boolean signOfDismissal, Date dateOfCreation, Date dateOfModification) {
         Person person = new Person();
 
         person.setFirstName(firstName);
         person.setLastName(lastName);
-        person.setSurname(surname);
+        person.setPatronymic(patronymic);
         person.setPosition(position);
         person.setSignOfDismissal(signOfDismissal);
+        person.setDateOfCreation(dateOfModification);
+        person.setDateOfModification(dateOfModification);
 
-        //
         HashMap<Integer, Person> personHashMap = StorageImpl.getPersonHashMap();
-
+        //personHashMap.put();
     }
 
     @Override
