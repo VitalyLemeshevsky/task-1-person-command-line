@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class StorageImpl {
     private static int lastIdPositionHashMap = 0;
-    static int lastPersonHashMap = 0;
+    private static int lastPersonHashMap = 0;
 
     private static HashMap<Integer, Position> positionHashMap;
     private static HashMap<Integer, Person> personHashMap;
@@ -15,14 +15,23 @@ public class StorageImpl {
     static {
         positionHashMap = new HashMap<>();
     }
-
+///////////////////////////////
     public static int getLastIdPositionHashMap() {
+        return lastPersonHashMap;
+    }
+
+    public static void setLastIdPersonHashMap(int lastIdPositionHashMap) {
+        StorageImpl.lastPersonHashMap = lastPersonHashMap;
+    }
+
+    public static int getLastIdPersonHashMap() {
         return lastIdPositionHashMap;
     }
 
     public static void setLastIdPositionHashMap(int lastIdPositionHashMap) {
         StorageImpl.lastIdPositionHashMap = lastIdPositionHashMap;
     }
+
 
     public static HashMap<Integer, Position> getPositionHashMap() {
         return positionHashMap;

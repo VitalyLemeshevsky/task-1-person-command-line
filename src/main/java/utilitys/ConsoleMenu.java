@@ -10,5 +10,6 @@ public class ConsoleMenu {
         System.out.println("\t4. Вывести одну конкретную должность");
         System.out.println("\t5. Вывести список должностей");
         System.out.println("\t6. Создать нового сотрудника");
+        System.out.println("\t10. Вывести всех сотрудников");
     }
 }

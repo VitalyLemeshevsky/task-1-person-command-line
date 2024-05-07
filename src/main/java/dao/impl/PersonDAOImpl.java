@@ -12,6 +12,7 @@ public class PersonDAOImpl implements PersonDAO {
     @Override
     public void addPerson(String lastName, String firstName, String patronymic, Position position, boolean signOfDismissal, Date dateOfCreation, Date dateOfModification) {
         Person person = new Person();
+        StorageImpl.setLastIdPersonHashMap(StorageImpl.getLastIdPersonHashMap() + 1);
 
         person.setFirstName(firstName);
         person.setLastName(lastName);
@@ -22,7 +23,13 @@ public class PersonDAOImpl implements PersonDAO {
         person.setDateOfModification(dateOfModification);
 
         HashMap<Integer, Person> personHashMap = StorageImpl.getPersonHashMap();
-        //personHashMap.put();
+        personHashMap.put(StorageImpl.getLastIdPersonHashMap(), person);
+        StorageImpl.setPersonHashMap(personHashMap);
+    }
+
+    @Override
+    public HashMap<Integer, Person> getAllPersons() {
+        return StorageImpl.getPersonHashMap();
     }
 
     @Override
