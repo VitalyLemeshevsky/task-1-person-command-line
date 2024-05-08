@@ -29,6 +29,8 @@ public class PersonDAOImpl implements PersonDAO {
 
     @Override
     public HashMap<Integer, Person> getAllPersons() {
+
+        HashMap<Integer, Person> ddddd= StorageImpl.getPersonHashMap();
         return StorageImpl.getPersonHashMap();
     }
 

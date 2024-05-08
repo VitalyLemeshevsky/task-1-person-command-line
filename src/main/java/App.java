@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class App {
     private final static Scanner console = new Scanner(System.in);
     //^([1-9]|1[0-2])$
-    private final static String regex = "^([1-6])$";
+    private final static String regex = "^([1-9])$";
     private static ObjectMapper mapper = new ObjectMapper();
     private static PositionDAO positionDAO = new PositionDAOImpl();
 

@@ -21,6 +21,7 @@ public class CreatingMap {
         menuCommandsMap.put(4, new DisplayPositionsById(new PositionDAOImpl(), new Scanner(System.in)));
         menuCommandsMap.put(5, new DisplayListAllPositions(new PositionDAOImpl()));
         menuCommandsMap.put(6, new AddNewPersonCommand(new PersonDAOImpl(), new PositionDAOImpl(), new Scanner(System.in)));
+        menuCommandsMap.put(9, new DisplayListAllPersons(new PersonDAOImpl(), new Scanner(System.in)));
     }
 
     public void execute(int valueInt) {

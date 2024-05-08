@@ -35,7 +35,7 @@ public class AddNewPersonCommand implements MenuCommand {
 
         Position position = selectPosition("Выберите код из следующих должностей:");
 
-      personDAO.addPerson(lastName, firstName, patronymic, position, signOfDismissal, date, date);
+        personDAO.addPerson(lastName, firstName, patronymic, position, signOfDismissal, date, date);
     }
 
     String enterTextValueOfField(String title) {
@@ -83,10 +83,8 @@ public class AddNewPersonCommand implements MenuCommand {
             if (!(fieldValue.matches("[-+]?\\d+") && positionDAO.isPositionKey(Integer.parseInt(fieldValue)))) {
                 fieldValue = "";
             }
+        }
 
-            }
-
-        System.out.println("Все кулл");
         return positionDAO.getPositionById(Integer.parseInt(fieldValue));
     }
 }

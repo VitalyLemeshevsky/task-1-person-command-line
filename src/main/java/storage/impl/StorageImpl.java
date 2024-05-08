@@ -7,25 +7,26 @@ import java.util.HashMap;
 
 public class StorageImpl {
     private static int lastIdPositionHashMap = 0;
-    private static int lastPersonHashMap = 0;
+    private static int lastIdPersonHashMap = 0;
 
     private static HashMap<Integer, Position> positionHashMap;
     private static HashMap<Integer, Person> personHashMap;
 
     static {
         positionHashMap = new HashMap<>();
+        personHashMap = new HashMap<>();
     }
 ///////////////////////////////
     public static int getLastIdPositionHashMap() {
-        return lastPersonHashMap;
+        return lastIdPositionHashMap;
     }
 
     public static void setLastIdPersonHashMap(int lastIdPositionHashMap) {
-        StorageImpl.lastPersonHashMap = lastPersonHashMap;
+        StorageImpl.lastIdPersonHashMap = lastIdPersonHashMap;
     }
 
     public static int getLastIdPersonHashMap() {
-        return lastIdPositionHashMap;
+        return lastIdPersonHashMap;
     }
 
     public static void setLastIdPositionHashMap(int lastIdPositionHashMap) {
