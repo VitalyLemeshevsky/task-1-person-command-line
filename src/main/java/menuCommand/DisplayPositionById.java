@@ -6,11 +6,11 @@ import dao.PositionDAO;
 
 import java.util.Scanner;
 
-public class DisplayPositionsById implements MenuCommand {
+public class DisplayPositionById implements MenuCommand {
     private PositionDAO positionDAO;
     private Scanner console;
 
-    public DisplayPositionsById(PositionDAO positionDAO, Scanner console) {
+    public DisplayPositionById(PositionDAO positionDAO, Scanner console) {
         this.positionDAO = positionDAO;
         this.console = console;
     }
@@ -21,7 +21,7 @@ public class DisplayPositionsById implements MenuCommand {
         String positionId = "";
 
         while (positionId.equals("")) {
-            System.out.println("Введите Id должности название которой вы хотите вывести:");
+            System.out.println("Введите Id сотрудника информацию о котором вы хотите вывести:");
             positionId = console.nextLine();
             if (!(positionId.matches("[-+]?\\d+") && positionDAO.isPositionKey(Integer.parseInt(positionId)))) {
                 positionId = "";

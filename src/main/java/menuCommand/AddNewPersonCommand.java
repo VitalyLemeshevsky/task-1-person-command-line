@@ -64,7 +64,6 @@ public class AddNewPersonCommand implements MenuCommand {
     Position selectPosition(String title) {
         ObjectMapper mapper = new ObjectMapper();
         String json = "";
-//        Person person = null;
         String fieldValue = "";
 
         while (fieldValue.equals("")) {
@@ -84,7 +83,6 @@ public class AddNewPersonCommand implements MenuCommand {
                 fieldValue = "";
             }
         }
-
         return positionDAO.getPositionById(Integer.parseInt(fieldValue));
     }
 }

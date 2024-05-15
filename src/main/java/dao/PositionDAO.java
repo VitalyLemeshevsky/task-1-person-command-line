@@ -12,7 +12,7 @@ public interface PositionDAO {
     public Position getPositionByName(String positionName);
     public Position getPositionById(Integer positionId);
     public boolean isPositionName(String positionName);
-    public boolean isPositionKey(int positionName);
+    public boolean isPositionKey(int positionKey);
     public void deleatePositionByName(String positionName);
 
 

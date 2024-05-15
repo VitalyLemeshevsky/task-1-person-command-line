@@ -1,5 +1,7 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dao.PersonDAO;
 import dao.PositionDAO;
+import dao.impl.PersonDAOImpl;
 import dao.impl.PositionDAOImpl;
 import utilitys.CreatingMap;
 import utilitys.DefaultData;
@@ -13,15 +15,15 @@ public class App {
     private final static String regex = "^([1-9])$";
     private static ObjectMapper mapper = new ObjectMapper();
     private static PositionDAO positionDAO = new PositionDAOImpl();
+    private static PersonDAO personDAO = new PersonDAOImpl();
 
 
     public static void main(String[] args) {
         CreatingMap creatingMap = new CreatingMap();
-        DefaultData defaultData = new DefaultData(positionDAO);
+        DefaultData defaultData = new DefaultData(positionDAO, personDAO);
         defaultData.init();
         String choiceMade = "";
         Boolean choiseAction = true;
-
 
         ConsoleMenu consoleMenu = new ConsoleMenu();
         consoleMenu.print();

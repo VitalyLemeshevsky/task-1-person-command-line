@@ -10,6 +10,8 @@ public class ConsoleMenu {
         System.out.println("\t4. Вывести одну конкретную должность");
         System.out.println("\t5. Вывести список должностей");
         System.out.println("\t6. Создать нового сотрудника");
-        System.out.println("\t9. Вывести всех сотрудников");
+        System.out.println("\t7. Изменить данные сотрудника по id");
+        System.out.println("\t8. Вывести одного конкретного сотрудника по id");
+        System.out.println("\t9. Вывести список отсортированных сотрудников по Фамилии");
     }
 }

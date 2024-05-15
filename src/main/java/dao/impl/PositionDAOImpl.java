@@ -7,9 +7,7 @@ import storage.impl.StorageImpl;
 import java.util.HashMap;
 
 public class PositionDAOImpl implements PositionDAO {
-    public PositionDAOImpl() {
-
-    }
+    public PositionDAOImpl() {}
 
     @Override
     public void addPositionDAO(String positionName) {
@@ -30,8 +28,8 @@ public class PositionDAOImpl implements PositionDAO {
     }
 
     @Override
-    public boolean isPositionKey(int positionName) {
-        return StorageImpl.getPositionHashMap().containsKey(positionName);
+    public boolean isPositionKey(int positionKey) {
+        return StorageImpl.getPositionHashMap().containsKey(positionKey);
     }
 
     @Override

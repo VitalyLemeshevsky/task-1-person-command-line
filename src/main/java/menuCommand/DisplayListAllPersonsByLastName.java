@@ -3,18 +3,16 @@ package menuCommand;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.PersonDAO;
-import dao.PositionDAO;
 import models.Person;
-import models.Position;
 
 import java.util.Map;
 import java.util.Scanner;
 
-public class DisplayListAllPersons implements MenuCommand {
+public class DisplayListAllPersonsByLastName implements MenuCommand {
     private PersonDAO personDAO;
     private Scanner console;
 
-    public DisplayListAllPersons(PersonDAO personDAO, Scanner console) {
+    public DisplayListAllPersonsByLastName(PersonDAO personDAO, Scanner console) {
         this.personDAO = personDAO;
         this.console = console;
     }
@@ -28,7 +26,6 @@ public class DisplayListAllPersons implements MenuCommand {
         } else {
 
             for (Map.Entry<Integer, Person> person : personDAO.getAllPersons().entrySet()) {
-                System.out.println(person.getKey() + " " + person.getValue().getLastName());
                 try {
                     json = mapper.writeValueAsString(person.getValue());
                     System.out.println("json = "+json);

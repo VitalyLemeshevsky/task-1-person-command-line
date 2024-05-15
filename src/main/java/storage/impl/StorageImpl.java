@@ -21,7 +21,7 @@ public class StorageImpl {
         return lastIdPositionHashMap;
     }
 
-    public static void setLastIdPersonHashMap(int lastIdPositionHashMap) {
+    public static void setLastIdPersonHashMap(int lastIdPersonHashMap) {
         StorageImpl.lastIdPersonHashMap = lastIdPersonHashMap;
     }
 
@@ -32,7 +32,6 @@ public class StorageImpl {
     public static void setLastIdPositionHashMap(int lastIdPositionHashMap) {
         StorageImpl.lastIdPositionHashMap = lastIdPositionHashMap;
     }
-
 
     public static HashMap<Integer, Position> getPositionHashMap() {
         return positionHashMap;
