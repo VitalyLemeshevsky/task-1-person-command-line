@@ -8,6 +8,7 @@ import models.Position;
 import java.util.Map;
 
 public class DisplayListAllPositions implements MenuCommand {
+
     private PositionDAO positionDAO;
 
     public DisplayListAllPositions(PositionDAO positionDAO) {

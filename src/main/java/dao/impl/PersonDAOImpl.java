@@ -68,5 +68,10 @@ public class PersonDAOImpl implements PersonDAO {
         return null;
     }
 
+    @Override
+    public HashMap<Integer, Person> getAllPersonsByPerson(PersonDAO personDAO) {
+        return null;
+    }
+
 
 }

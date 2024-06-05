@@ -20,10 +20,11 @@ public class CreatingMap {
         menuCommandsMap.put(3, new DeletePositionByName(new PositionDAOImpl(), new Scanner(System.in)));
         menuCommandsMap.put(4, new DisplayPositionById(new PositionDAOImpl(), new Scanner(System.in)));
         menuCommandsMap.put(5, new DisplayListAllPositions(new PositionDAOImpl()));
-        menuCommandsMap.put(6, new AddNewPersonCommand(new PersonDAOImpl(), new PositionDAOImpl(), new Scanner(System.in)));
-        menuCommandsMap.put(7, new ChangePersonByKey(new PersonDAOImpl(), new Scanner(System.in)));
-        menuCommandsMap.put(8, new DisplayPersonById(new PersonDAOImpl(), new Scanner(System.in)));
-        menuCommandsMap.put(9, new DisplayListAllPersonsByLastName(new PersonDAOImpl(), new Scanner(System.in)));
+        menuCommandsMap.put(6, new DisplayListAllPositionsByAlphabet(new PositionDAOImpl()));
+        menuCommandsMap.put(7, new AddNewPersonCommand(new PersonDAOImpl(), new PositionDAOImpl(), new Scanner(System.in)));
+        menuCommandsMap.put(8, new ChangePersonByKey(new PersonDAOImpl(), new Scanner(System.in)));
+        menuCommandsMap.put(9, new DisplayPersonById(new PersonDAOImpl(), new Scanner(System.in)));
+        menuCommandsMap.put(10, new DisplayListAllPersonsByLastName(new PersonDAOImpl(), new Scanner(System.in)));
     }
 
     public void execute(int valueInt) {

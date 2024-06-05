@@ -13,4 +13,5 @@ public interface PersonDAO {
     public boolean isPersonKey(int personKey);
     public void changePersonDAO(int personId, String lastName, String firstName, String patronymic);
     public HashMap<Integer, Person> getAllPersonsByLastName();
+    public HashMap<Integer, Person> getAllPersonsByPerson(PersonDAO personDAO);
 }
